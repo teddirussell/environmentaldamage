@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Environmental Damage — Cumbalum, NSW</title>
+<meta name="description" content="Documentation of environmental damage at Cumbalum, NSW. Full record publishes 24 June 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #15191a;
+    --bg-alt: #1b2120;
+    --ink: #ece7dc;
+    --ink-dim: #8d978e;
+    --clay: #b3592f;
+    --line: #3a4138;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 50% 0%, var(--bg-alt) 0%, var(--bg) 60%);
+    color: var(--ink);
+    font-family: 'Spectral', Georgia, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 6vw;
+    overflow: hidden;
+  }
+
+  .holding {
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--clay);
+    opacity: 0;
+    animation: rise 0.9s ease-out 0.1s forwards;
+  }
+
+  h1 {
+    margin-top: 1.4rem;
+    font-weight: 300;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    opacity: 0;
+    animation: rise 0.9s ease-out 0.3s forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--ink-dim);
+  }
+
+  .boundary {
+    width: 100%;
+    margin: 2.6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: rise 0.9s ease-out 0.5s forwards;
+  }
+
+  .boundary svg {
+    width: 100%;
+    max-width: 420px;
+    height: 14px;
+    overflow: visible;
+  }
+
+  .boundary line {
+    stroke: var(--line);
+    stroke-width: 1;
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+    animation: draw 1.4s ease-out 0.8s forwards;
+  }
+
+  .boundary circle {
+    fill: var(--clay);
+    opacity: 0;
+    animation: dot 0.5s ease-out 2s forwards;
+  }
+
+  .date-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--ink-dim);
+    opacity: 0;
+    animation: rise 0.9s ease-out 0.7s forwards;
+  }
+
+  .date-line strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes dot {
+    to { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow, h1, .boundary, .date-line, .boundary line, .boundary circle {
+      animation: none !important;
+      opacity: 1 !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body { padding: 10vw 6vw; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="holding">
+    <p class="eyebrow">Environmental Damage · Cumbalum, NSW</p>
+    <h1>Documentation<br><em>in progress.</em></h1>
+
+    <div class="boundary" aria-hidden="true">
+      <svg viewBox="0 0 420 14" preserveAspectRatio="none">
+        <line x1="0" y1="7" x2="420" y2="7" />
+        <circle cx="210" cy="7" r="3.5" />
+      </svg>
+    </div>
+
+    <p class="date-line">The full record publishes <strong>24 June 2026</strong>.</p>
+  </main>
+
+</body>
+</html>
